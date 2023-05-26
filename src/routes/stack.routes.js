@@ -1,16 +1,12 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
+
+import Login from '../screens/Login';
 //import { Splash } from '../lotties/Splash';
-import Login from '../screens/login.js';
-import Cadastro from '../screens/cadastro.js';
-import Home from '../screens/home.js';
-import Acompanhamento from '../screens/acompanhamento.js';
-import Denuncia from '../screens/denuncia.js';
-import DiskDenuncia from '../screens/diskdenuncia.js';
-import SeusProcessos from '../screens/seusprocessos.js';
-import Solicitacao from '../screens/solicitacao.js';
-import SuasDenuncias from '../screens/suasdenuncias.js';
+import AuthRoutes from './tab.routes';
+import Usuario from '../screens/Usuario';
+import NovoUsuario from '../screens/NovoUsuario';
 
 
 const Stack = createNativeStackNavigator();
@@ -21,15 +17,10 @@ function StackNavigator(){
         <Stack.Navigator screenOptions={{headerShown: false}
         }>
             
-            <Stack.Screen name="Cadastro" component={Cadastro}  /> 
-            <Stack.Screen name="Login" component={Login} />      
-            <Stack.Screen name="Home" component={Home} /> 
-            <Stack.Screen name="Acompanhamento" component={Acompanhamento} />
-            <Stack.Screen name="Denuncia" component={Denuncia} /> 
-            <Stack.Screen name="DiskDenuncia" component={DiskDenuncia} /> 
-            <Stack.Screen name="SeusProcessos" component={SeusProcessos} />
-            <Stack.Screen name="Solicitacao" component={Solicitacao} />
-            <Stack.Screen name="SuasDenuncias" component={SuasDenuncias} />    
+            <Stack.Screen name="Login" component={Login}  /> 
+            <Stack.Screen name="Home" component={AuthRoutes} />      
+            <Stack.Screen name="Usuario" component={Usuario} /> 
+            <Stack.Screen name="NovoUsuario" component={NovoUsuario} /> 
           
         </Stack.Navigator>
     )
